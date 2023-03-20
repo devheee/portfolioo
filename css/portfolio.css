@@ -1,0 +1,233 @@
+.f_inner {
+    display: flex;
+    gap: 100px;
+    width: 1600px;
+    margin: 0 auto;
+}
+
+.f_inner>* {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inner::after {
+    content: "";
+    position: absolute;
+    inset: 0 0 0 0;
+    clip-path: polygon(0 0, 50% 0, 60% 100%, 0% 100%);
+    background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
+    z-index: -999;
+}
+
+.inner {
+    /* width: 1400px;
+    height: 700px;
+    margin: 0 auto;
+    border-radius: 30px;
+    box-shadow: 0 0 10px #111;
+    background: #f9f9f9; */
+}
+
+.item .mokup img {
+    margin: 100px 0 0 100px;
+    width: 700px;
+}
+
+
+
+
+.slogan {
+    font-family: 'TheJamsil5Bold';
+    font-size: 30px;
+}
+
+.section .content {
+    background: tomato;
+    transform: translate(-300px, 0);
+    opacity: 0;
+    height: 600px;
+    overflow: hidden;
+    align-items: flex-start;
+}
+
+.section .content .case {
+    transform: translate(0, 0);
+}
+
+.section .content:hover .case {
+    transform: translate(0, calc(-100% + 600px));
+    transition: 5s;
+}
+
+
+
+.section .description {
+    background: tan;
+    transform: translate(300px, 0);
+    transition: 1s 2s;
+    opacity: 0;
+}
+
+
+.section.on .content {
+    transform: translate(0, 0);
+    transition: 1s 1s;
+    opacity: 1;
+}
+
+
+.section.on .description {
+    transform: translate(0, 0);
+    transition: 1s 2s;
+    opacity: 1;
+}
+
+.header {
+    position: fixed;
+    inset: 50px auto auto 50px;
+    z-index: 9999;
+}
+
+.header.on {
+    color: #fff;
+}
+
+.gnb {
+    position: fixed;
+    inset: 50% 50px auto auto;
+    transform: translate(0, -40px);
+    z-index: 9999;
+
+    width: 100px;
+}
+
+.gnb li {
+    font-size: 0;
+}
+
+.gnb li a {
+    position: relative;
+    display: block;
+    height: 10px;
+    margin: 5px 0;
+}
+
+.gnb li a::before {
+    content: "";
+    position: absolute;
+    inset: 50% 0 auto auto;
+    height: 1px;
+    width: 30px;
+    background: #333;
+    transition: 0.5s;
+}
+
+
+.gnb li.on a::before {
+    width: 50px;
+}
+
+.section {}
+
+
+.cover {
+    position: fixed;
+    inset: 0 0 auto 0;
+    background: #333;
+    color: #ddd;
+    z-index: 998;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* display: none; */
+    height: 0;
+    overflow: hidden;
+    transition: 1s;
+}
+
+.cover.on {
+    height: 100vh;
+}
+
+.cover ul {
+    height: 100vh;
+}
+
+.toTop {
+    position: fixed;
+    inset: auto 50px 50px auto;
+    z-index: 999;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+}
+
+.mopen {
+    position: fixed;
+    inset: 50px 50px auto auto;
+    z-index: 9999;
+
+    width: 30px;
+    height: 30px;
+    background: #f9f9f9;
+}
+
+.mopen::before,
+.mopen::after {
+    content: "";
+    position: absolute;
+    background: #333;
+    height: 2px;
+}
+
+.mopen::before {
+    inset: 5px 5px auto 5px;
+}
+
+.mopen::after {
+    inset: auto 5px 5px 5px;
+}
+
+.mopen button {
+    font-size: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+
+
+.mopen button::before,
+.mopen button::after {
+    content: "";
+    position: absolute;
+    inset: 50% 5px auto 5px;
+    transform: translate(0, -50%);
+    background: #333;
+    height: 2px;
+    transition: 0.5s;
+}
+
+
+.mopen.on::before,
+.mopen.on::after {
+    opacity: 0;
+    transition: 0.5s;
+}
+
+
+.mopen.on button::before {
+    transform: translate(0, -50%) rotate(45deg);
+    transition: 0.5s;
+
+}
+
+.mopen.on button::after {
+    transform: translate(0, -50%) rotate(-45deg);
+    transition: 0.5s;
+
+}
